@@ -21,7 +21,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div class=' flex w-screen h-auto  justify-center items-center'>
+                <div class=' flex sm:w-screen h-auto  justify-center items-center'>
                 <img class=' sm:w-9/12 sm:h-9/12 p-10 ' 
                 
                 src='../firstpage.svg'></img>
@@ -32,8 +32,8 @@ const Home = () => {
         <div class='flex  sm:flex-row flex-col rounded-xl sm:p-20 sm:pt-20 sm:m-10 pt-10 m-3'
         style={{background: "linear-gradient(360deg, #E0C340 0%, #DFC23E 3.93%, #E1C441 7.23%, #E3C743 10.23%, #E4C542 13.14%, #E6C744 16.22%, #E7C845 19.84%, #E5C643 24.38%, #E6C945 31.00%, #E3C743 37.19%, #E9CA48 43.33%, #EDCE49 50.36%, #F0D44C 56.57%, #F4D84F 62.71%, #F6DA52 67.12%, #F7DB53 73.77%, #F9DD55 79.08%, #F9DF56 85.64%, #FAE157 93.50%, #F9DF56 100%)"}}>
                 
-                <div class=' flex w-screen h-auto  justify-center items-center'>
-                <img class=' sm:w-9/12 sm:h-9/12 p-10 rounded-xl' 
+                <div class=' flex sm:w-screen h-auto  justify-center items-center overflow-hidden'>
+                <img class=' sm:w-9/12 sm:h-9/12 p-10 rounded-xl ' 
                 
                 src='../second.png'></img>
                 </div>

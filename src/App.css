@@ -1,0 +1,7 @@
+*{
+    margin:0;
+}
+.body{
+    --tw-bg-opacity: 1;
+    background-color: rgb(244 244 245 / var(--tw-bg-opacity));
+}

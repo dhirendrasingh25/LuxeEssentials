@@ -44,9 +44,11 @@ const Home = () => {
                     <p class='font-mono sm:text-5xl text-3xl font-black leading-10 sm:p-5 p-3  rounded-lg mt-4'>SALE NOW</p>
                     <p class='p-5 pt-14  sm:text-2xl font-sans font-medium'>Spend minimal Rs10K get 30% off
 voucher code for your next purchase</p>                 
-                    <p class='p-5 pt-14  sm:text-xl font-sans  font-normal'>*Terms & Conditions apply</p>                    
+                    <p class='pl-5 pt-14 sm:pb-5 pb-0 sm:text-xl font-sans  font-normal'>*Terms & Conditions apply</p>                    
                     </div>
-                  <Link to='./Products'><button type='button' class='bg-black hover:bg-gray-700 text-white sm:p-5 p-3 sm:text-lg font-sans rounded-xl ml-10 mb-10 cursor-grabbing"'> SHOP NOW </button></Link>
+                    <div class='ml-4 -mt-8 sm:ml-0 sm:-mt-0'>
+                    <Link to='./Products'><button type='button' class='bg-black hover:bg-gray-700 text-white sm:p-5 p-3 sm:text-lg font-sans rounded-xl ml-10 mb-10 cursor-grabbing"'> SHOP NOW </button></Link>
+                    </div>
                   </div>
                 </div>
           </div>

@@ -3,7 +3,7 @@
 Luxe Essentials is an Online Luxury Shopping Website . Fully Responsive Design and Future Project
 Feel Free to Contribute to my Project
 
-Tech Used:
+# Tech Used:
 1.Vite ReactJS
 2.TailwindCSS
 3.UI- DaisyUI

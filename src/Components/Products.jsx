@@ -5,20 +5,14 @@ import { fetchFromAPI } from '../../utils/fetchFromAPI';
 const Products = () => {
   const [products, setproducts] = useState([]);
 
-  useEffect(() => {
-    
+  useEffect(() => { 
     fetchFromAPI()
     .then((data) => setproducts(data.results))
-
-    
-    
-  }, [])
-  
-  
-  
+ 
+  }, []) 
   return (
-    <div>
-        <div class='flex flex-row   justify-center items-center sticky'>
+    <div class=''>
+        <div class='flex flex-row   justify-center items-center sticky   top-20  z-30  bg-slate-100'>
           <button type='button' class='p-2 m-5  rounded-3xl text-white bg-black px-5 font-thin hover:bg-slate-600  '> MEN </button>
           <button type='button' class='p-2 m-5  rounded-3xl text-white bg-black px-5 font-thin hover:bg-slate-600 '> WOMEN </button>
           <button type='button' class='p-2 m-5  rounded-3xl text-white bg-black px-5 font-thin hover:bg-slate-600 '> ALL </button>
@@ -29,10 +23,8 @@ const Products = () => {
             {
               products && products.map((products,code) => (
                 <ProdCard key={code}  products={products}/>
-              ))
-              
-            }
-          
+              )) 
+            }          
           </div>
         
         </div>

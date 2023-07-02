@@ -14,7 +14,7 @@ const NavBar = () => {
   <div class="flex justify-end flex-1 px-2">
     <div class="flex items-stretch">
     <Link to='/Cart'><a class="btn btn-ghost rounded-btn p-3"><ShoppingCartIcon /></a></Link>
-      <div class="dropdown dropdown-end">
+      <div class="dropdown dropdown-end z-40">
         <label tabindex="0" class="btn btn-ghost rounded-btn p-3"><TableRowsIcon /></label>
         <ul tabindex="0" class="menu dropdown-content z-40 p-2 shadow bg-stone-200 rounded-box w-52 mt-4">
         <li><Link to='/Login'><a class='text-xl font-sans font-medium tex'>Login</a></Link></li>

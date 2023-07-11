@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import  ProdCard from './ProdCard'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
 
+
 const Products = () => {
   const [products, setproducts] = useState([]);
 
@@ -22,7 +23,7 @@ const Products = () => {
           <div class='flex flex-col sm:flex-row flex-wrap'>
             {
               products && products.map((products,code) => (
-                <ProdCard key={code}  products={products}/>
+                <ProdCard key={code}  products={products} />
               )) 
             }          
           </div>

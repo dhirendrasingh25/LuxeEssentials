@@ -50,6 +50,7 @@ const ProdCard = ({ products }) => {
       setCount(0);     
     }  
   };
+  
 
   const handleAdd=(products)=>{
     

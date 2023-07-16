@@ -1,13 +1,15 @@
-import React from 'react'
-import CartCard from './CartCard';
-
+import React, { useEffect } from 'react'
 import {useSelector} from 'react-redux'
 import {Box} from '@mui/material'
+import CartItems from './CartItems'
 
 
 
 const Cart = () => {
-  const items = useSelector((state)=> state.cart);
+  const items = useSelector((state)=> state.cart.data);
+  const count=useSelector((state)=>state.cart.totalCount)
+  const sum=useSelector((state)=>state.cart.totalAmount)
+  
  
   return (
     <div class=' '>
@@ -15,24 +17,38 @@ const Cart = () => {
       <p class='text-2xl p-4'> CART ITEMS</p>
       </div>
       
-      <div class='flex justify-center items-center flex-col sm:flex-row'>
-        <div class='flex justify-center items-center flex-col w-1/2 border m-4 '>
-        <p class='m-2'> Total Items : <span >{items.length}</span> </p>
-        <CartCard />
-        <Box class=' bg-slate-300 h-96 flex flex-wrap w-auto'>
-   
-            
-    
+      <div class='flex justify-center items-center  flex-col p-4 '>
+        <div class='flex justify-center items-center flex-col w-auto sm:w-full   '>
+        <p class='m-2'> Total Items : <span >{count}</span> </p>      
+        {
+          items.length==0?(
+            <>
+            <div class='flex justify-center items-center  w-80 sm:w-1/3 border-4 h-96 rounded-md mt-4 '>
+            <span > Cart is Empty </span>
+            </div>
+            </>
+          ):(
+            <>
+          <div class='flex flex-col max-h-96 scroll-smooth w-80 sm:w-1/3 overflow-scroll p-3 border-4 rounded-md' >
+            {
+              items && items.map((item)=>(
+                <CartItems products={item} id={item.code} />
+              ))
+            }
+          </div> 
+            </>
+          )
+        }   
+
+        </div>
+        <div class='flex justify-center items-center  w-80 sm:w-1/3 border-4 rounded-md mt-4 '>
+          <p class='m-2'>Total Amount : Rs. {(sum).toLocaleString()} </p>
+          
+        </div>
+        <div class='flex justify-center items-center   mt-4 '>
+        <button class='mt-5  font-sans hover:bg-stone-600 hover:text-white border-teal-950 border-2 px-3 py-2 rounded-3xl' type='button' > Check Out </button>
+        </div>
         
-  
-     
-        </Box>
-        </div>
-        <div class='flex justify-center items-center flex-col w-1/2 border m-4 '>
-          <p class='m-2'>Total Amount : </p>
-        <Box class=' bg-slate-300 h-96 flex flex-wrap w-auto'>
-        </Box>
-        </div>
       </div>
         
     </div>

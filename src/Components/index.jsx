@@ -5,4 +5,4 @@ export {default as Products} from './Products';
 export {default as Cart} from './Cart';
 export {default as About} from './About';
 export {default as ProdCard} from './ProdCard';
-export {default as CartCard} from './CartCard';
+export {default as CartItems} from './CartItems'

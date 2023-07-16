@@ -1,60 +1,35 @@
 import React, { useState ,useEffect } from 'react';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-import {add , remove} from '../store/cartSlice';
+import {add , remove,edit} from '../store/cartSlice';
 import {useDispatch , useSelector} from 'react-redux'
 
 const ProdCard = ({ products }) => {
 
   const dispatch = useDispatch();
 
-  const [buttonClicked, setButtonClicked] = useState(false);
-  const [SelectedItems,setSelectedItems] = useState([]);
+  const [count, setCount] = useState(1)
 
-  const [count, setCount] = useState(1);
+  const [buttonClicked, setbuttonClicked] = useState(false)
 
-  useEffect(() => {
-    if(buttonClicked){
-      setSelectedItems((prevItems)=>[
-        ...prevItems,{
-          price: products.price.value * 100,
-          image: products.allArticleBaseImages[0],
-          name: products.name,
-          count:count,
-          sum: products.price.value * 100 * count,
-        }
-      ])
-      console.log(SelectedItems);
-    }
-    
-  },[buttonClicked])
-  
-  
-
-  const handleButtonClick = () => {
-    
-    setButtonClicked(!buttonClicked);
-    setCount(1);
-    
-  };
-  
-
-  const handleIncrement = () => {
+  const handleIncrement=(products)=>{
+    dispatch(edit({code:products.code,type:'inc'}))
     setCount(count + 1);
-  };
-
-  const handleDecrement = () => {
+    
+  }
+  const handleDecrement=(products)=>{
+    dispatch(edit({code:products.code,type:'dec'}))
     setCount(count - 1);
-    if (count == 1) {
-      handleButtonClick();
-      setCount(0);     
-    }  
-  };
-  
+    if(count==1){
+      setbuttonClicked(!buttonClicked)
+      setCount(1)
+    } 
+    
+  }
 
   const handleAdd=(products)=>{
-    
     dispatch(add(products));
+    setbuttonClicked(!buttonClicked)
   }
 
   return (
@@ -69,9 +44,9 @@ const ProdCard = ({ products }) => {
           <div className="card-actions justify-end">
             {buttonClicked ? (
               <>
-                <button class='pt-1' onClick={handleDecrement}><RemoveCircleIcon/></button>
+                <button class='pt-1' onClick={()=>handleDecrement(products)}><RemoveCircleIcon/></button>
                 <span class='text-xl'>{count}</span>
-                <button class='pt-1'onClick={handleIncrement}><AddCircleIcon/></button>
+                <button class='pt-1'onClick={()=>handleIncrement(products)}><AddCircleIcon/></button>
               </>
             ) : (
               <button
@@ -91,3 +66,45 @@ const ProdCard = ({ products }) => {
 };
 
 export default ProdCard;
+
+  // const [buttonClicked, setButtonClicked] = useState(false);
+  // const [SelectedItems,setSelectedItems] = useState([]);
+
+  // const [count, setCount] = useState(1);
+// useEffect(() => {
+//   if(buttonClicked){
+//     setSelectedItems((prevItems)=>[
+//       ...prevItems,{
+//         price: products.price.value * 100,
+//         image: products.allArticleBaseImages[0],
+//         name: products.name,
+//         count:count,
+//         sum: products.price.value * 100 * count,
+//       }
+//     ])
+//     console.log(SelectedItems);
+//   }
+  
+// },[buttonClicked])
+
+
+
+// const handleButtonClick = () => {
+  
+//   setButtonClicked(!buttonClicked);
+//   setCount(1);
+  
+// };
+
+
+// const handleIncrement = () => {
+//   setCount(count + 1);
+// };
+
+// const handleDecrement = () => {
+//   setCount(count - 1);
+//   if (count == 1) {
+//     handleButtonClick();
+//     setCount(0);     
+//   }  
+// };

@@ -2,7 +2,7 @@ import React from 'react'
 import {add , remove} from '../store/cartSlice';
 import {useDispatch , useSelector} from 'react-redux'
 
-const CartCard = () => {
+const cartCard = () => {
   const handleRemove=(products)=>{
     dispatch(remove(products));
   }
@@ -21,4 +21,4 @@ const CartCard = () => {
   )
 }
 
-export default CartCard;
+export default cartCard;

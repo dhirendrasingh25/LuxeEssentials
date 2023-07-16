@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import  ProdCard from './ProdCard'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
+import { fetchProducts } from '../store/productsSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const Products = () => {
-  const [products, setproducts] = useState([]);
+  const dispatch = useDispatch()
+  // const [products, setproducts] = useState([]);
+  const {data:products} = useSelector((state)=> state.product)
 
   useEffect(() => { 
-    fetchFromAPI()
-    .then((data) => setproducts(data.results))
+    dispatch(fetchProducts())
+    // fetchFromAPI()
+    // .then((data) => setproducts(data.results))
  
-  }, []) 
+  }) 
   return (
     <div class=''>
         <div class='flex flex-row   justify-center items-center sticky   top-20  z-30  bg-slate-100'>

@@ -10,6 +10,7 @@ Tech Used till date :
 2. TailwindCSS       
 3. UI- DaisyUI      
 4. ICons- Material UI     
-5. API- RapidAPI     
+5. API- RapidAPI
+6. Redux- State Management     
 
 Try Here : https://luxe-essentials.netlify.app

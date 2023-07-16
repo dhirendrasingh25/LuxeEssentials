@@ -37,7 +37,9 @@ export function fetchProducts(){
         
     },
     headers: {
-        'X-RapidAPI-Key': 'd9ebc6e747msh5fff7267e655227p111cdejsn580fb834d2d6',
+        // 'X-RapidAPI-Key': 'd9ebc6e747msh5fff7267e655227p111cdejsn580fb834d2d6',
+        // 'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
+        'X-RapidAPI-Key': 'a0569ee998mshff72b6e48e35b2cp1c3512jsn2b6602d51d68',
         'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
     }
     };
